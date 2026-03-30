@@ -8,7 +8,7 @@ use App\Http\Controllers\StudentController;
 use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MateriController;
-use App\Http\Controllers\KompetensiController;
+// use App\Http\Controllers\KompetensiController;
 
 
 // Rute ini akan menangani URL seperti:
@@ -23,7 +23,7 @@ Route::get('/register', [AuthController::class, 'register'])->name('register');
 Route::post('/sign-in', [AuthController::class, 'signIn'])->name('auth.sign-in');
 Route::post('/sign-up', [AuthController::class, 'signUp'])->name('auth.sign-up');
 Route::post('/sign-out', [AuthController::class, 'signOut'])->name('auth.sign-out');
-Route::get('/indikator-capaian', [KompetensiController::class, 'indikator'])->name('indikator');
+// Route::get('/indikator-capaian', [KompetensiController::class, 'indikator'])->name('indikator');
 
 // Rute-rute yang memerlukan autentikasi
 Route::middleware(['auth', 'check.progress'])->group(function() {

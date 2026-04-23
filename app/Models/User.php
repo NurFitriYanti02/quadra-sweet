@@ -49,7 +49,7 @@ class User extends Authenticatable
         return new Attribute(
             get: function() {
                 if (empty($this->avatar) || is_null($this->avatar)) {
-                    return asset('404_Black.jpg');
+                    return asset('fk.PNG');
                 }
 
                 return asset(Storage::url($this->avatar));

@@ -222,7 +222,7 @@
         </table>
       </div>
          <p>
-          Berdasarkan hasil eksplorasi kalian, maka nilai 𝑐 menentukan <input type="text" placeholder="" style="width: 50px;">
+          Berdasarkan hasil eksplorasi kalian, maka nilai 𝑐 menentukan <input type="text"  style="width: 80px;">
           dengan sumbu <input type="text" name="sumbu" class="form-control d-inline w-auto @error('sumbu') is-invalid @enderror" placeholder="Isi sumbu" value="{{old('sumbu')}}" style="width: 50px !important;">. 
           Nilai 𝑐 merupakan nilai dari fungsi ketika 𝑥 = 0. Jadi, titik potong grafik dengan sumbu 
           <input type="text" name="sumbu_kedua" class="form-control d-inline w-auto @error('sumbu_kedua') is-invalid @enderror" placeholder="Isi sumbu" value="{{old('sumbu_kedua')}}" style="width: 50px !important;"> adalah di titik 
@@ -232,7 +232,7 @@
           <input type="text" name="up_direction" class="form-control d-inline w-auto @error('up_direction') is-invalid @enderror" placeholder="Isi arah" value="{{old('up_direction')}}" style="width: 50px !important;">. Sebaliknya, jika 𝑐 menurun, 
           grafik akan bergeser ke <input type="text" name="down_direction" class="form-control d-inline w-auto @error('down_direction') is-invalid @enderror" placeholder="Isi arah" value="{{old('down_direction')}}" style="width: 50px !important;">.
         </p>
-        <button type="submit" class="btn btn-primary mt-3">Kirim Jawaban</button>
+
         <form action="{{route('quiz.evaluate')}}" method="POST">
           @csrf
           <p>Untuk lebih paham mengetahui nilai 𝑐, ayoo kita kerjakan contoh dan latihan soal berikut yaa!</p>
@@ -286,6 +286,7 @@
         </form>
     </div>
 </li>
+
         
         <!-- Peran nilai b -->
         <li>
@@ -689,9 +690,5 @@
 @endsection
 
   <!-- Skrip -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

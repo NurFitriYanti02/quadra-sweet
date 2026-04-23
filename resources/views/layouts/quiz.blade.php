@@ -5,6 +5,18 @@
     <title>{{ $quiz->title ?? 'Quiz' }}</title>
     <link href="{{ asset('css/utama.css') }}" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script>
+    window.MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            processEscapes: true
+        },
+        options: {
+            // Ini akan memaksa MathJax mencari rumus di seluruh halaman
+            processHtmlClass: 'container-fluid' 
+        }
+    };
+    </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
     <style>
@@ -118,7 +130,8 @@
                             @endphp
 
                             @foreach($options as $key => $option)
-                                @if($option)
+                                {{-- Cek apakah nilainya bukan null dan bukan string kosong --}}
+                                @if($option !== null && $option !== '') 
                                     <div class="form-check my-2">
                                         <input type="radio"
                                             name="question_{{ $question->id }}"

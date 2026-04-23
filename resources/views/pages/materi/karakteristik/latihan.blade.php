@@ -28,113 +28,11 @@
                 <input type="text" id="nilai2" name="nilai2" class="form-control d-inline w-auto" style="width: 80px !important;">.
             </p>
         </li>
-        <div class="my-4">
-            <div class="text-center">
-                <button type="button" class="btn btn-primary" onclick="cekLatihan()">Periksa Jawaban</button>
-            </div>
+        <div class="text-center mt-4 mb-5">
+          <button type="button" class="btn btn-primary btn-lg px-5 shadow" onclick="periksaJawabanHalamanIni()">
+              Kirim Jawaban
+          </button>
         </div>
-    </form>
-</div>
-
-<script>
-// Jawaban benar
-const kunci = {
-    fungsi_terbuka1: 'atas',
-    nilai1: 'positif',
-    fungsi_terbuka2: 'bawah',
-    nilai2: 'negatif'
-};
-
-function cekLatihan() {
-    // Ambil dan cek masing-masing isian
-    Object.keys(kunci).forEach(id => {
-        const input = document.getElementById(id);
-        if(!input) return;
-        // Bandingkan dengan jawaban benar (case-insensitive)
-        if(input.value.trim().toLowerCase() === kunci[id]) {
-            input.style.backgroundColor = '#90EE90';   // hijau muda
-            input.style.color = '#1A4D1A';
-        } else {
-            input.style.backgroundColor = '#FFCCCC';   // merah muda
-            input.style.color = '#B10000';
-        }
-    });
-}
-</script>
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  // 🎯 Kunci jawaban benar
-  const correctAnswers = {
-   
-
-    "fungsi_terbuka1": "atas",
-    "fungsi_terbuka2": "bawah",
-    "nilai1": "positif",
-    "nilai2": "negatif",
-  };
-
-  // 🌱 Tambahkan event listener untuk semua input yang ada di kunci jawaban
-  Object.keys(correctAnswers).forEach(name => {
-    const input = document.querySelector(`[name="${name}"]`);
-    if (!input) return; // skip jika tidak ditemukan
-    
-    input.addEventListener("input", function() {
-      const userAnswer = input.value.trim().toLowerCase();
-      const correct = correctAnswers[name].toLowerCase();
-
-      // reset styling dulu
-      input.style.borderColor = "";
-      input.style.backgroundColor = "";
-
-      // jika benar
-      if (userAnswer === correct) {
-        input.style.borderColor = "green";
-        input.style.backgroundColor = "#e8ffe8";
-      } 
-      // jika salah tapi belum kosong
-      else if (userAnswer.length > 0) {
-        input.style.borderColor = "red";
-        input.style.backgroundColor = "#ffe8e8";
-      } 
-      // jika kosong
-      else {
-        input.style.borderColor = "";
-        input.style.backgroundColor = "";
-      }
-    });
-  });
-
-  // 🌟 Optional: pesan sukses jika semua benar
-  const form = document.querySelector('form[action="{{route('quiz.evaluate')}}"]');
-  if (form) {
-    form.addEventListener("submit", function(e) {
-      e.preventDefault();
-
-      let allCorrect = true;
-      Object.keys(correctAnswers).forEach(name => {
-        const input = document.querySelector(`[name="${name}"]`);
-        if (input && input.value.trim().toLowerCase() !== correctAnswers[name].toLowerCase()) {
-          allCorrect = false;
-        }
-      });
-
-      if (allCorrect) {
-        Swal.fire({
-          icon: 'success',
-          title: 'Hebat! 🎉',
-          text: 'Semua jawaban kamu benar.',
-          confirmButtonText: 'Lanjut'
-        });
-      } else {
-        Swal.fire({
-          icon: 'info',
-          title: 'Masih ada yang salah 😅',
-          text: 'Periksa lagi kolom yang berwarna merah.',
-          confirmButtonText: 'Oke'
-        });
-      }
-    });
-  }
-});
-</script>
+      </form>
+  </div>
 </div>

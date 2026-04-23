@@ -1,4 +1,3 @@
-
 <nav
     class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
     id="layout-navbar" style="z-index: 100 !important">
@@ -12,7 +11,6 @@
     <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
         <ul class="navbar-nav flex-row align-items-center ms-auto">
             <!-- Place this tag where you want the button to render. -->
-
 
             <!-- User -->
             <li class="nav-item navbar-dropdown dropdown-user dropdown">

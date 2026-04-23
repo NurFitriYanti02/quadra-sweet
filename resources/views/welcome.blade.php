@@ -12,7 +12,7 @@
     <meta name="keywords" content="quadralearn, fungsi kuadrat, media pembelajaran interaktif, 404 Not Found Indonesia">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="{{ asset('quadra_learn.png') }}" />
+    <link rel="shortcut icon" href="{{ asset('fk.PNG') }}" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -63,7 +63,7 @@
         <!-- Mobile menu toggle: End-->
         <a href="#landingHero" class="app-brand-link">
           <span class="app-brand-logo demo">
-            <img src="{{ asset('quadra_learn.png') }}" alt="404 Not Found Indonesia" width="30" style="border-radius: 150px" srcset="">
+            <img src="{{ asset('fk.PNG') }}" alt="404 Not Found Indonesia" width="30" style="border-radius: 150px" srcset="">
           </span>
           <span class="app-brand-text menu-text fw-bold ms-2 ps-1">QuadraLearn</span>
         </a>
@@ -79,23 +79,25 @@
           <li class="nav-item">
             <a class="nav-link fw-medium" aria-current="page" href="#landingHero">Dashboard</a>
           </li>
+    
           <li class="nav-item dropdown">
-            <a href="#" class="nav-link dropdown-toggle" id="kompetensiDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a href="javascript:void(0)" class="nav-link dropdown-toggle" id="kompetensiDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Kompetensi
             </a>
             <ul class="dropdown-menu" aria-labelledby="kompetensiDropdown">
-              <li><a class="dropdown-item" href="#">Indikator Capaian</a></li>
-              <li><a class="dropdown-item" href="tujuan-pembelajaran">Tujuan Pembelajaran</a></li>
+              <li><a class="dropdown-item" href="{{ route('indikator') }}">Indikator Capaian</a></li>
+              <li><a class="dropdown-item" href="{{ route('tujuan') }}">Tujuan Pembelajaran</a></li>
             </ul>
           </li>
+
           <li class="nav-item dropdown">
-            <a href="#" class="nav-link dropdown-toggle" id="kompetensiDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a href="javascript:void(0)" class="nav-link dropdown-toggle" id="informasiDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Informasi
             </a>
             <ul class="dropdown-menu" aria-labelledby="informasiDropdown">
-              <li><a class="dropdown-item" href="#">Profil</a></li>
-              <li><a class="dropdown-item" href="#">Petunjuk Aplikasi</a></li>
-              <li><a class="dropdown-item" href="#">Daftar Pustaka</a></li>
+              <li><a class="dropdown-item" href="{{ route('profil') }}">Profil</a></li>
+              <li><a class="dropdown-item" href="{{ route('petunjuk') }}">Petunjuk Aplikasi</a></li>
+              <li><a class="dropdown-item" href="{{ route('dapus') }}">Daftar Pustaka</a></li>
             </ul>
           </li>
         </ul>

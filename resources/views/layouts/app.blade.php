@@ -23,7 +23,7 @@
         />
 
         <!-- Favicon -->
-        <link rel="shortcut icon" href="{{ asset('404_Black.jpg') }}" />
+        <link rel="shortcut icon" href="{{ asset('fk.PNG') }}" />
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />

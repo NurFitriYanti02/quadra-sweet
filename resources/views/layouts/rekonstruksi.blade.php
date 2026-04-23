@@ -59,7 +59,7 @@
           <div class="px-3">
             <div class="mengingat" id="mengingat">
               <p style="padding: 0 30px;" class="mt-3">
-                &nbsp;&nbsp;&nbsp;&nbsp; Mengonstruksi fungsi kuadrat berarti Menyusun atau membentuk
+                &nbsp;&nbsp;&nbsp;&nbsp; Mengonstruksi fungsi kuadrat berarti menyusun atau membentuk
                 persamaan kuadrat berdasarkan informasi tertentu yang diberikan. Informasi
                 ini bisa berupa titik-titik yang dilalui oleh kurva kuadrat, titik puncak, atau titik
                 potong dengan sumbu \( x \) dan \( y \). Secara umum, untuk dapat menyusun suatu

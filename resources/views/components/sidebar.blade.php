@@ -2,7 +2,7 @@
    <div class="app-brand demo">
       <a href="{{ route('welcome') }}" class="app-brand-link">
          <span class="app-brand-logo demo">
-            <img src="{{ asset('fk.png') }}" alt="Fungsi Kuadrat" width="30" style="border-radius: 150px" />
+            <img src="{{ asset('fk.PNG') }}" alt="Fungsi Kuadrat" width="30" style="border-radius: 150px" />
          </span>
          <span class="app-brand-text menu-text fw-bold ms-2 fs-5">QuadraLearn</span>
       </a>
@@ -35,8 +35,13 @@
             <li class="menu-item {{ $isActive ? 'active open' : '' }}">
                {{-- Menu Evaluasi tanpa submenu --}}
                @if ($menu['name'] === 'Evaluasi')
-                  <a href="{{ route($menu['route']) }}" class="menu-link">
-                     <i class="menu-icon tf-icons bx bx-flag"></i>
+                  <a href="{{ $isLocked ? 'javascript:void(0);' : route($menu['route']) }}" 
+                     class="menu-link {{ $isLocked ? 'text-muted' : '' }}"
+                     style="{{ $isLocked ? 'cursor: not-allowed;' : '' }}">
+                     
+                     {{-- Ikon otomatis jadi gembok kalau terkunci --}}
+                     <i class="menu-icon tf-icons {{ $isLocked ? 'bx bx-lock-alt' : 'bx bx-flag' }}"></i>
+                     
                      <div data-i18n="Evaluasi">{{ $menu['name'] }}</div>
                   </a>
                @else

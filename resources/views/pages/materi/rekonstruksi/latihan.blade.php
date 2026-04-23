@@ -269,78 +269,95 @@
             </div>
         </li>
     </ol>
-    
 </div>
+<div class="mt-4 mb-5 text-center">
+    <button type="button" id="btnSelesaikanMateri" class="btn btn-primary shadow">
+        <i class="bx bx-send me-1"></i> Kirim Jawaban
+    </button>
+</div>
+
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-  // 🎯 Kunci jawaban benar
-  const correctAnswers = {
-    // 🔹 Tabel peran nilai a
-    
-   
-  };
+    // 🎯 Gabungan Kunci Jawaban (isi1-isi53 & lat1-lat154)
+    const allAnswers = {
+        // Kunci Contoh (isi)
+        "isi1": "4", "isi2": "2", "isi3": "3", "isi4": "9", "isi5": "3", "isi6": "5", "isi7": "4", "isi8": "2", "isi9": "3", "isi10": "3", "isi11": "1", "isi12": "9", "isi13": "3", "isi14": "4", "isi15": "2", "isi16": "5", "isi17": "3", "isi18": "5", "isi19": "2", "isi20": "3", "isi21": "1", "isi22": "5", "isi23": "2", "isi24": "5", "isi25": "3", "isi26": "2", "isi27": "1", "isi28": "2", "isi29": "1", "isi30": "1", "isi31": "2", "isi32": "3", "isi33": "1", "isi34": "2", "isi35": "1", "isi36": "3", "isi37": "2", "isi38": "1", "isi39": "1", "isi40": "3", "isi41": "2", "isi42": "1", "isi43": "2", "isi44": "1", "isi45": "2", "isi46": "1", "isi47": "2", "isi48": "2", "isi49": "1", "isi50": "2", "isi51": "1", "isi52": "2", "isi53": "2",
+        
+        // Kunci Latihan (lat)
+        "lat1": "1", "lat2": "1", "lat3": "2", "lat4": "2", "lat5": "4", "lat6": "4", "lat7": "4", "lat8": "2", "lat9": "4", "lat10": "16", "lat11": "4", "lat12": "7", "lat13": "4", "lat14": "2", "lat15": "4", "lat16": "3", "lat17": "2", "lat18": "16", "lat19": "4", "lat20": "4", "lat21": "2", "lat22": "7", "lat23": "4", "lat24": "12", "lat25": "2", "lat26": "3", "lat27": "3", "lat28": "2", "lat29": "12", "lat30": "2", "lat31": "3", "lat32": "12", "lat33": "2", "lat34": "2", "lat35": "3", "lat36": "3", "lat37": "2", "lat38": "2", "lat39": "12", "lat40": "2", "lat41": "6", "lat42": "2", "lat43": "3", "lat44": "4", "lat45": "6", "lat46": "-1", "lat47": "-1", "lat48": "6", "lat49": "3", "lat50": "2", "lat51": "-1", "lat52": "6", "lat53": "2", "lat54": "5", "lat55": "2", "lat56": "1", "lat57": "6", "lat58": "5", "lat59": "2", "lat60": "1", "lat61": "6", "lat62": "5", "lat63": "2", "lat64": "2", "lat65": "1", "lat66": "1", "lat67": "6", "lat68": "5", "lat69": "2", "lat70": "56", "lat71": "12", "lat72": "1", "lat73": "6", "lat74": "5", "lat75": "2", "lat76": "56", "lat77": "12", "lat78": "0", "lat79": "-2", "lat80": "0", "lat81": "3", "lat82": "0", "lat83": "-6", "lat84": "x1", "lat85": "x2", "lat86": "y", "lat87": "-2", "lat88": "3", "lat89": "-6", "lat90": "2", "lat91": "-3", "lat92": "-6", "lat93": "-6", "lat94": "-6", "lat95": "-6", "lat96": "1", "lat97": "a", "lat98": "x1", "lat99": "x2", "lat100": "-2", "lat101": "3", "lat102": "x", "lat103": "3", "lat104": "-2", "lat105": "6", "lat106": "x", "lat107": "5x", "lat108": "6", "lat109": "-1", "lat110": "5", "lat111": "1", "lat112": "1", "lat113": "-1", "lat114": "5", "lat115": "1", "lat116": "5", "lat117": "1", "lat118": "1", "lat119": "1", "lat120": "5", "lat121": "1", "lat122": "2", "lat123": "5", "lat124": "1", "lat125": "4", "lat126": "5", "lat127": "1", "lat128": "5", "lat129": "4", "lat130": "-4", "lat131": "4", "lat132": "-4", "lat133": "4", "lat134": "-1", "lat135": "-1", "lat136": "-1", "lat137": "1", "lat138": "5", "lat139": "1", "lat140": "x", "lat141": "2x", "lat142": "1", "lat143": "-1", "lat144": "x", "lat145": "2x", "lat146": "1", "lat147": "5", "lat148": "-x", "lat149": "2", "lat150": "1", "lat151": "5", "lat152": "-x", "lat153": "2", "lat154": "4"
+    };
 
-  // 🌱 Tambahkan event listener untuk semua input yang ada di kunci jawaban
-  Object.keys(correctAnswers).forEach(name => {
-    const input = document.querySelector(`[name="${name}"]`);
-    if (!input) return; // skip jika tidak ditemukan
-    
-    input.addEventListener("input", function() {
-      const userAnswer = input.value.trim().toLowerCase();
-      const correct = correctAnswers[name].toLowerCase();
-
-      // reset styling dulu
-      input.style.borderColor = "";
-      input.style.backgroundColor = "";
-
-      // jika benar
-      if (userAnswer === correct) {
-        input.style.borderColor = "green";
-        input.style.backgroundColor = "#e8ffe8";
-      } 
-      // jika salah tapi belum kosong
-      else if (userAnswer.length > 0) {
-        input.style.borderColor = "red";
-        input.style.backgroundColor = "#ffe8e8";
-      } 
-      // jika kosong
-      else {
-        input.style.borderColor = "";
-        input.style.backgroundColor = "";
-      }
-    });
-  });
-
-  // 🌟 Optional: pesan sukses jika semua benar
-  const form = document.querySelector('form[action="{{route('quiz.evaluate')}}"]');
-  if (form) {
-    form.addEventListener("submit", function(e) {
-      e.preventDefault();
-
-      let allCorrect = true;
-      Object.keys(correctAnswers).forEach(name => {
+    // 1. Logika Warna Input (Hijau/Merah)
+    Object.keys(allAnswers).forEach(name => {
         const input = document.querySelector(`[name="${name}"]`);
-        if (input && input.value.trim().toLowerCase() !== correctAnswers[name].toLowerCase()) {
-          allCorrect = false;
-        }
-      });
+        if (!input) return;
 
-      if (allCorrect) {
-        Swal.fire({
-          icon: 'success',
-          title: 'Hebat! 🎉',
-          text: 'Semua jawaban kamu benar.',
-          confirmButtonText: 'Lanjut'
+        input.addEventListener("input", function() {
+            const val = input.value.trim().toLowerCase();
+            const correct = allAnswers[name].toLowerCase();
+
+            if (val === "") {
+                input.style.backgroundColor = "";
+                input.style.borderColor = "";
+            } else if (val === correct) {
+                input.style.backgroundColor = "#e8ffe8";
+                input.style.borderColor = "green";
+            } else {
+                input.style.backgroundColor = "#ffe8e8";
+                input.style.borderColor = "red";
+            }
         });
-      } else {
-        Swal.fire({
-          icon: 'info',
-          title: 'Masih ada yang salah 😅',
-          text: 'Periksa lagi kolom yang berwarna merah.',
-          confirmButtonText: 'Oke'
-        });
-      }
     });
-  }
+
+    // 2. Logika Klik Tombol Selesai
+    const btn = document.getElementById('btnSelesaikanMateri');
+    if (btn) {
+        btn.addEventListener("click", function() {
+            let allCorrect = true;
+            let firstError = null;
+
+            // Cek satu per satu
+            Object.keys(allAnswers).forEach(name => {
+                const input = document.querySelector(`[name="${name}"]`);
+                if (input) {
+                    const val = input.value.trim().toLowerCase();
+                    if (val !== allAnswers[name].toLowerCase()) {
+                        allCorrect = false;
+                        input.style.borderColor = "red";
+                        if (!firstError) firstError = input; // Ambil yang salah pertama kali
+                    }
+                }
+            });
+
+            if (allCorrect) {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Luar Biasa! 🎉',
+                    text: 'Semua jawaban benar. Mari lanjut ke kuis!',
+                    confirmButtonText: 'Buka Kuis',
+                    confirmButtonColor: '#696cff'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        // Gunakan URL manual supaya tidak error Laravel Route
+                        window.location.href = "/quiz"; 
+                    }
+                });
+            } else {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Belum Selesai...',
+                    text: 'Masih ada jawaban yang kosong atau salah. Periksa kotak merah ya!',
+                    confirmButtonText: 'Siap!',
+                    confirmButtonColor: '#8592a3'
+                });
+
+                // Otomatis scroll ke bagian yang salah agar siswa tidak bingung
+                if (firstError) {
+                    firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    firstError.focus();
+                }
+            }
+        });
+    }
 });
 </script>

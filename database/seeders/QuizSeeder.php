@@ -60,12 +60,12 @@ class QuizSeeder extends Seeder
                 ],
                 [
                     'id' => 5,
-                    'question' => 'Diketahui 𝑓(𝑥) = 2𝑥² + 5𝑥 + 1, tentukan koordinat titik puncak dan persamaan sumbu simetrinya!',
+                    'question' => 'Diketahui 𝑓(𝑥) = 2𝑥² + 5𝑥 + 1, tentukan koordinat titik puncak!',
                     'options' => [
-                        'a' => 'Titik puncak \\(\\left( -\\frac{4}{5}, -\\frac{17}{5} \\right)\\), sumbu simetri x = -\\frac{4}{5}',
-                        'b' => 'Titik puncak \\(\\left( \\frac{4}{5}, -\\frac{17}{5} \\right)\\), sumbu simetri x = \\frac{4}{5}',
-                        'c' => 'Titik puncak \\(\\left( -\\frac{4}{5}, \\frac{17}{5} \\right)\\), sumbu simetri x = -\\frac{4}{5}',
-                        'd' => 'Titik puncak \\(\\left( \\frac{4}{5}, \\frac{17}{5} \\right)\\), sumbu simetri x = \\frac{4}{5}',
+                        'a' => 'Titik puncak \\\\(\\\\left( -\\\\frac{5}{4}, -\\\\frac{17}{8} \\\\right)\\\\)', 
+                        'b' => 'Titik puncak \\\\(\\\\left( \\\\frac{5}{4}, -\\\\frac{17}{8} \\\\right)\\\\)', 
+                        'c' => 'Titik puncak \\\\(\\\\left( -\\\\frac{5}{4}, \\\\frac{17}{8} \\\\right)\\\\)', 
+                        'd' => 'Titik puncak \\\\(\\\\left( \\\\frac{5}{4}, \\\\frac{17}{8} \\\\right)\\\\)', 
                     ],
                     'correct_answer' => 'a',
                 ],

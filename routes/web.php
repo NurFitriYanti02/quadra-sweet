@@ -25,6 +25,27 @@ Route::post('/sign-up', [AuthController::class, 'signUp'])->name('auth.sign-up')
 Route::post('/sign-out', [AuthController::class, 'signOut'])->name('auth.sign-out');
 // Route::get('/indikator-capaian', [KompetensiController::class, 'indikator'])->name('indikator');
 
+// Tambahkan Rute Informasi & Kompetensi di sini
+Route::get('/profil', function () {
+    return view('informasi.profil');
+})->name('profil');
+
+Route::get('/petunjuk', function () {
+    return view('informasi.petunjuk');
+})->name('petunjuk');
+
+Route::get('/dapus', function() {
+    return view('informasi.dapus');
+})->name('dapus');
+
+Route::get('/indikator', function () {
+    return view('kompetensi.indikator');
+})->name('indikator');
+
+Route::get('/tujuan', function () {
+    return view('kompetensi.tujuan');
+})->name('tujuan');
+
 // Rute-rute yang memerlukan autentikasi
 Route::middleware(['auth', 'check.progress'])->group(function() {
     Route::get('/peta', function () {

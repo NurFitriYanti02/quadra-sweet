@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html
     lang="id"
     class="light-style layout-menu-fixed layout-compact"
@@ -14,16 +13,14 @@
             name="viewport"
             content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
         />
+        <link rel="icon" type="image/png" href="{{ asset('fk.PNG') }}?v=1.1">
 
-        <title>{{ config("app.name") }}</title>
+        <title>@yield('title', 'Quadra Learn')</title>
 
         <meta
             name="description"
             content="Media Pembelajaran Interaktif Berbasis Web pada Materi Fungsi Kuadrat Kelas X dengan Metode Tutorial"
         />
-
-        <!-- Favicon -->
-        <link rel="shortcut icon" href="{{ asset('fk.PNG') }}" />
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
